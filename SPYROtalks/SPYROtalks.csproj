@@ -26,6 +26,7 @@
     <Folder Include="LottieSample\Views\" />
     <Folder Include="LottieSample\ViewModels\" />
     <Folder Include="Shared\" />
+    <Folder Include="RefitSample\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="MainPage.xaml.cs" />
