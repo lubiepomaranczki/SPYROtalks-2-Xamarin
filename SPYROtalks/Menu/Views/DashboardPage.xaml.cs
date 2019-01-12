@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using SPYROtalks.LottieSample.Views;
+using SPYROtalks.RefitSample.Views;
 
 namespace SPYROtalks.Menu.Views
 {
@@ -21,14 +22,14 @@ namespace SPYROtalks.Menu.Views
             base.OnDisappearing();
         }
 
-        public async void Handle_LottieButtonClicked(object sender, EventArgs e)
+        public void Handle_LottieButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LottieSamplePage());
+            Navigation.PushAsync(new LottieSamplePage());
         }
 
         public void Handle_RefitButtonClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Navigation.PushAsync(new RefitSamplePage());
         }
     }
 }
