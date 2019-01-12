@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
+using Newtonsoft.Json;
 
 namespace SPYROtalks.RefitSample.Models
 {
@@ -16,7 +18,7 @@ namespace SPYROtalks.RefitSample.Models
         public string Icon { get; set; }
     }
 
-    public class Main
+    public class MainWeatherInfo
     {
         public double Temp { get; set; }
         public int Pressure { get; set; }
@@ -42,8 +44,38 @@ namespace SPYROtalks.RefitSample.Models
         public int Id { get; set; }
         public double Message { get; set; }
         public string Country { get; set; }
-        public int Sunrise { get; set; }
-        public int Sunset { get; set; }
+        public string Sunrise { get; set; }
+        public string Sunset { get; set; }
+
+        [JsonIgnore]
+        public DateTime FormattedSunrise
+        {
+            get
+            {
+                if (!double.TryParse(Sunrise, out var dt))
+                {
+                    return new DateTime();
+                }
+                DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                dtDateTime = dtDateTime.AddSeconds(dt).ToLocalTime();
+                return dtDateTime;
+            }
+        }
+
+        [JsonIgnore]
+        public DateTime FormattedSunset
+        {
+            get
+            {
+                if (!double.TryParse(Sunset, out var dt))
+                {
+                    return new DateTime();
+                }
+                DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                dtDateTime = dtDateTime.AddSeconds(dt).ToLocalTime();
+                return dtDateTime;
+            }
+        }
     }
 
     public class WeatherApiResponseModel
@@ -51,7 +83,7 @@ namespace SPYROtalks.RefitSample.Models
         public Coord Coord { get; set; }
         public List<Weather> Weather { get; set; }
         public string Base { get; set; }
-        public Main Main { get; set; }
+        public MainWeatherInfo Main { get; set; }
         public int Visibility { get; set; }
         public Wind Wind { get; set; }
         public Clouds Clouds { get; set; }
