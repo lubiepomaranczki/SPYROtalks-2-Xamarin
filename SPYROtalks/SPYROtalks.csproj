@@ -15,5 +15,16 @@
   <ItemGroup>
     <Folder Include="LottieSample\" />
     <Folder Include="RefitSample\" />
+    <Folder Include="Menu\" />
+    <Folder Include="RefitSample\ViewModels\" />
+    <Folder Include="RefitSample\Views\" />
+    <Folder Include="Menu\ViewModels\" />
+    <Folder Include="Menu\Views\" />
+    <Folder Include="LottieSample\Views\" />
+    <Folder Include="LottieSample\ViewModels\" />
+    <Folder Include="Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="MainPage.xaml.cs" />
   </ItemGroup>
 </Project>

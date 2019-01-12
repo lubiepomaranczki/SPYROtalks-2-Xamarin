@@ -1,6 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SPYROtalks.Menu.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace SPYROtalks
@@ -11,7 +11,7 @@ namespace SPYROtalks
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new DashboardPage());
         }
 
         protected override void OnStart()
