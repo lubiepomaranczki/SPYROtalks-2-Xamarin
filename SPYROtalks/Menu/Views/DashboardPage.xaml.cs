@@ -1,18 +1,14 @@
 ﻿using System;
 using Xamarin.Forms;
-using SPYROtalks.Menu.ViewModels;
 using SPYROtalks.LottieSample.Views;
 
 namespace SPYROtalks.Menu.Views
 {
     public partial class DashboardPage : ContentPage
     {
-        public DashboardViewModel ViewModel         {             get { return BindingContext as DashboardViewModel; }         }
-
         public DashboardPage()
         {
             InitializeComponent();
-            BindingContext = new DashboardViewModel();
         }
 
         protected override void OnAppearing()
