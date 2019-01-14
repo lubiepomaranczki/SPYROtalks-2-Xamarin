@@ -15,6 +15,7 @@ namespace SPYROtalks.RefitSample.ViewModels
         public RefitSampleViewModel()
         {
             Title = "Refit sample";
+
             weatherApiService = RestService.For<IWeatherApiService>("https://api.openweathermap.org/data");
         }
 
@@ -29,7 +30,7 @@ namespace SPYROtalks.RefitSample.ViewModels
             {
                 if (!string.IsNullOrEmpty(CityName))
                 {
-                    Weather = await weatherApiService.GetWeatherForCity("wroclaw");
+                    Weather = await weatherApiService.GetWeatherForCity("wroclaw", "fabffdc626e2fa75b8afba242c296dba", UnitsType.Metric);
                     CityName = string.Empty;
                 }
             }

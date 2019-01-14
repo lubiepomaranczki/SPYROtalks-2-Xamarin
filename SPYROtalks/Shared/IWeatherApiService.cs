@@ -6,7 +6,8 @@ namespace SPYROtalks.Shared
 {
     public interface IWeatherApiService
     {
-        [Get("/2.5/weather?q={cityName}&appid=fabffdc626e2fa75b8afba242c296dba&units=Metric")]
-        Task<WeatherApiResponseModel> GetWeatherForCity(string cityName);
+        [Get("/2.5/weather?q={cityName}&appid={apiKey}&units={units}")]
+        Task<WeatherApiResponseModel> GetWeatherForCity(string cityName, string apiKey, UnitsType units);
     }
 }
+
