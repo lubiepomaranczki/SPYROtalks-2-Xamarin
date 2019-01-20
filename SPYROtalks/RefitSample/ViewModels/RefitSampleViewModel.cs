@@ -17,9 +17,10 @@ namespace SPYROtalks.RefitSample.ViewModels
             Title = "Refit sample";
 
             //The code is commented for a reason. You can check which version do you prefere - Refit or BaseApiService?
-            weatherApiService = RestService.For<IWeatherApiService>("https://api.openweathermap.org");
 
-            //weatherApiService = new WeatherApiService("https://api.openweathermap.org");
+            //weatherApiService = RestService.For<IWeatherApiService>("https://api.openweathermap.org");
+
+            weatherApiService = new WeatherApiService("https://api.openweathermap.org");
         }
 
         public string CityName { get; set; }
@@ -33,7 +34,7 @@ namespace SPYROtalks.RefitSample.ViewModels
             {
                 if (!string.IsNullOrEmpty(CityName))
                 {
-                    Weather = await weatherApiService.GetWeatherForCity("wroclaw", "fabffdc626e2fa75b8afba242c296dba", UnitsType.Metric);
+                    Weather = await weatherApiService.GetWeatherForCity(CityName, "fabffdc626e2fa75b8afba242c296dba", UnitsType.Metric);
                     CityName = string.Empty;
                 }
             }
