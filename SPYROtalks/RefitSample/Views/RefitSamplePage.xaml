@@ -20,6 +20,5 @@
                 <Label Text="{Binding Weather.Main.Temp_max, StringFormat='Temperatur maksymalna: {0:N}°C'}" HorizontalOptions="Center"/>
             </StackLayout>
         </Grid>
-            
     </ContentPage.Content>
 </ContentPage>

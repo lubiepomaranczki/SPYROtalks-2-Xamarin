@@ -16,7 +16,10 @@ namespace SPYROtalks.RefitSample.ViewModels
         {
             Title = "Refit sample";
 
-            weatherApiService = RestService.For<IWeatherApiService>("https://api.openweathermap.org/data");
+            //The code is commented for a reason. You can check which version do you prefere - Refit or BaseApiService?
+            weatherApiService = RestService.For<IWeatherApiService>("https://api.openweathermap.org");
+
+            //weatherApiService = new WeatherApiService("https://api.openweathermap.org");
         }
 
         public string CityName { get; set; }
