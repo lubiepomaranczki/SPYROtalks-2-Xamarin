@@ -63,6 +63,9 @@
     <PackageReference Include="Refit">
       <Version>4.6.58</Version>
     </PackageReference>
+    <PackageReference Include="LiveXAML">
+      <Version>2.1.59</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -91,6 +94,12 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\logo_spyrotalks.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo_spyrotalks.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo_spyrotalks.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo_spyrotalks.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo_spyrotalks.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\logo_spyrotalks.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -98,6 +107,8 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-ldpi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SPYROtalks\SPYROtalks.csproj">
