@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SPYROtalks.RefitSample.Views.RefitSamplePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                <Entry Text="{Binding CityName}" Placeholder="Please, enter city name" HorizontalOptions="Fill"/>
+                <Button Command="{Binding GetWeatherCommand}" Text="Get weather" BackgroundColor="Turquoise" HorizontalOptions="End"/>
+            </StackLayout>
+            <BoxView Grid.Row="1" BackgroundColor="Turquoise" HorizontalOptions="Fill" Margin="20,0"/>
+            <StackLayout Grid.Row="2" Orientation="Vertical" VerticalOptions="Center">
+                <Label Text="{Binding Weather.Name, StringFormat='Pogoda dla: {0:N}'}" HorizontalOptions="Center" FontSize="Medium"/>
+                <Label Text="{Binding Weather.Sys.FormattedSunrise, StringFormat='Wschod slonca:{0:HH:mm:ss}'}" HorizontalOptions="Center"/>
+                <Label Text="{Binding Weather.Sys.FormattedSunset, StringFormat='Zachod slonca: {0:HH:mm:ss}'}" HorizontalOptions="Center"/>
+                <Label Text="{Binding Weather.Main.Temp_min, StringFormat='Temp minimalna: {0:N}°C'}" HorizontalOptions="Center"/>
+                <Label Text="{Binding Weather.Main.Temp_max, StringFormat='Temperatur maksymalna: {0:N}°C'}" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
